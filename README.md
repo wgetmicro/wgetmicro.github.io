@@ -6,7 +6,7 @@ The fastest way to install [Micro](https://micro-editor.github.io/)
 
 `wget -O- https://wgetmicro.github.io | bash`
 
-This script will install micro to the directory you're in. To install somewhere else (e.g. /usr/local/bin), cd there and make sure you can write to that directory, e.g. `cd /usr/local/bin; wget -O- https://wgetmicro.github.io | sudo bash`
+This script will install micro to the directory you're in. To install somewhere else (e.g. /usr/local/bin), cd there and make sure you can write to that directory, e.g. `cd /usr/local/bin && wget -O- https://wgetmicro.github.io | sudo bash`
 
 ## Advanced usage
 
@@ -23,8 +23,8 @@ While getmic.ro is tested primarily with bash, it should be compatible with any 
 To verify the script, you can download it and checksum it. The sha256 checksum is `c247504054b22dd103689a49221ae582cf514c8f4c4254c7f864565651c87f3c`.
 
     wget -O getmicro.sh https://wgetmicro.github.io
-    shasum -a 256 getmicro.sh # and check the output
-    bash getmicro.sh
+    echo "c247504054b22dd103689a49221ae582cf514c8f4c4254c7f864565651c87f3c  getmicro.sh" | shasum -a 256 -c - # and check the output
+    [ "$?" = 0 ] && bash getmicro.sh
 
 ## Contributing
 
