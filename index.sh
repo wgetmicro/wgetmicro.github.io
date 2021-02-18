@@ -2,11 +2,11 @@
 
 # This script installs micro.
 #
-# Quick install: `wget -O- https://getmic.ro | bash`
+# Quick install: `wget -O- https://wgetmicro.github.io | bash`
 #
 # This script will install micro to the directory you're in. To install
 # somewhere else (e.g. /usr/local/bin), cd there and make sure you can write to
-# that directory, e.g. `cd /usr/local/bin; wget -O- https://getmic.ro | sudo bash`
+# that directory, e.g. `cd /usr/local/bin; wget -O- https://wgetmicro.github.io | sudo bash`
 #
 # Found a bug? Report it here: https://github.com/benweissmann/getmic.ro
 #
@@ -96,7 +96,7 @@ re-run this script.
 For example:
 
   $ export GETMICRO_PLATFORM=linux64
-  $ wget -O- https://getmic.ro | bash
+  $ wget -O- https://wgetmicro.github.io | bash
 
 EOM
   exit 1

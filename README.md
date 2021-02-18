@@ -1,14 +1,12 @@
-# getmic.ro
+# wgetmicro
 
 ![Test](https://github.com/benweissmann/getmic.ro/workflows/Test/badge.svg)
 
 The fastest way to install [Micro](https://micro-editor.github.io/)
 
-`wget -O- https://getmic.ro | bash`
+`wget -O- https://wgetmicro.github.io | bash`
 
-This script will install micro to the directory you're in. To install somewhere else (e.g. /usr/local/bin), cd there and make sure you can write to that directory, e.g. `cd /usr/local/bin; wget -O- https://getmic.ro | sudo bash`
-
-> Vous ne comprenez pas l'anglais? vous parlez français? Regardez le [*LISEZ-MOI* français](./README.fr.md)!
+This script will install micro to the directory you're in. To install somewhere else (e.g. /usr/local/bin), cd there and make sure you can write to that directory, e.g. `cd /usr/local/bin; wget -O- https://wgetmicro.github.io | sudo bash`
 
 ## Advanced usage
 
@@ -18,13 +16,13 @@ There's a couple other things you can do with getmic.ro.
 
 While getmic.ro is tested primarily with bash, it should be compatible with any POSIX shell (we test zsh, dash, ksh, and busybox). If you don't have `bash`, you can just use:
 
-`wget -O- https://getmic.ro | sh`
+`wget -O- https://wgetmicro.github.io | sh`
 
 ### Verify the script checksum
 
-To verify the script, you can download it and checksum it. The sha256 checksum is `43fa64b603c88bb2cef003802572b9afcebc52742e909b50abc6e73abdb1e829`.
+To verify the script, you can download it and checksum it. The sha256 checksum is `c247504054b22dd103689a49221ae582cf514c8f4c4254c7f864565651c87f3c`.
 
-    wget -O getmicro.sh https://getmic.ro
+    wget -O getmicro.sh https://wgetmicro.github.io
     shasum -a 256 getmicro.sh # and check the output
     bash getmicro.sh
 
