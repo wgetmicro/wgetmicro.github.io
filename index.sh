@@ -18,7 +18,7 @@
 set -e -u
 
 githubLatestTag() {
-  finalUrl=$(wget -O /dev/null -S -o /dev/stdout "https://github.com/$1/releases/latest" | grep -o '^[ \t]*Location.*v[^ ]*')
+  finalUrl=$(wget -O /dev/null -S "https://github.com/$1/releases/latest" 2>&1 | grep -o '^[ \t]*Location.*v[^ ]*')
   printf "%s\n" "${finalUrl##*v}"
 }
 
