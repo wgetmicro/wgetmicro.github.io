@@ -2,11 +2,11 @@
 
 # This script installs micro.
 #
-# Quick install: `curl https://getmic.ro | bash`
+# Quick install: `wget -O- https://getmic.ro | bash`
 #
 # This script will install micro to the directory you're in. To install
 # somewhere else (e.g. /usr/local/bin), cd there and make sure you can write to
-# that directory, e.g. `cd /usr/local/bin; curl https://getmic.ro | sudo bash`
+# that directory, e.g. `cd /usr/local/bin; wget -O- https://getmic.ro | sudo bash`
 #
 # Found a bug? Report it here: https://github.com/benweissmann/getmic.ro
 #
@@ -18,7 +18,7 @@
 set -e -u
 
 githubLatestTag() {
-  finalUrl=$(curl "https://github.com/$1/releases/latest" -s -L -I -o /dev/null -w '%{url_effective}')
+  finalUrl=$(wget -O /dev/null -S -o- "https://github.com/$1/releases/latest" | grep -o '^[ \t]*Location.*v[^ ]*')
   printf "%s\n" "${finalUrl##*v}"
 }
 
@@ -96,7 +96,7 @@ re-run this script.
 For example:
 
   $ export GETMICRO_PLATFORM=linux64
-  $ curl https://getmic.ro | bash
+  $ wget -O- https://getmic.ro | bash
 
 EOM
   exit 1
@@ -124,7 +124,7 @@ fi
 printf "Latest Version: %s\n" "$TAG"
 printf "Downloading https://github.com/zyedidia/micro/releases/download/v%s/micro-%s-%s.%s\n" "$TAG" "$TAG" "$platform" "$extension"
 
-curl -L "https://github.com/zyedidia/micro/releases/download/v$TAG/micro-$TAG-$platform.$extension" > "micro.$extension"
+wget -O "micro.$extension" "https://github.com/zyedidia/micro/releases/download/v$TAG/micro-$TAG-$platform.$extension"
 
 case "$extension" in
   "zip") unzip -j "micro.$extension" -d "micro-$TAG" ;;
